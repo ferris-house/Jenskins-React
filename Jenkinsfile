@@ -6,15 +6,20 @@ pipeline {
         }
     }
     stages {
-        stage('Build') { 
+        stage('Build React app') { 
             steps {
                 echo 'start build'
                 sh 'npm i --unsafe-perm --registry=https://registry.npmmirror.com'
                 sh 'npm run build'
                 echo 'build success'
                 sh 'ls'
+                sh 'docker'
+            }
+        }
+        stage('Serve React app') { 
+            steps {
                 sh 'npm install -g serve'
-                sh 'serve -s build'
+                sh 'serve -s build -l 50000'
             }
         }
     }
