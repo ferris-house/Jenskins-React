@@ -7,11 +7,7 @@ pipeline {
     }
     stages {
         stage('Build React app') { 
-            agent {
-                docker {
-                    label 'docker'
-                }
-            }
+            agent docker
             steps {
                 // echo 'start build'
                 // sh 'npm i --unsafe-perm --registry=https://registry.npmmirror.com'
