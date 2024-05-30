@@ -13,16 +13,7 @@ pipeline {
                 sh 'npm run build'
                 sh 'npm install -g serve'
                 sh 'serve -s build -l 4000'
-            }
-        }
-        stage('Test') {
-            steps {
-                echo 'hollow'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'upload to sever'
+                echo 'build success'
             }
         }
     }
