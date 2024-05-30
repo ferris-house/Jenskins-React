@@ -13,7 +13,6 @@ pipeline {
                 sh 'npm run build'
                 echo 'build success'
                 sh 'ls'
-                sh 'docker'
             }
         }
         stage('Serve React app') { 
