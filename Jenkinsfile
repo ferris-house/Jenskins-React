@@ -13,13 +13,15 @@ pipeline {
                 sh 'npm run build'
                 echo 'build success'
                 sh 'ls'
+                sh 'cd ../'
+                sh 'ls'
             }
         }
-        stage('Serve React app') { 
-            steps {
-                sh 'npm install -g serve'
-                sh 'serve -s build -l 4000'
-            }
-        }
+        // stage('Serve React app') { 
+        //     steps {
+        //         sh 'npm install -g serve'
+        //         sh 'serve -s build -l 4000'
+        //     }
+        // }
     }
 }
