@@ -8,7 +8,9 @@ pipeline {
     stages {
         stage('Build React app') { 
             agent {
-                docker
+                docker {
+                    label 'docker'
+                }
             }
             steps {
                 // echo 'start build'
