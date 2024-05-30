@@ -1,9 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 
-interface IProps {}
-
-function App({}: IProps) {
+function App() {
   const [num, setNum] = useState(0);
   return (
     <div className="App">
